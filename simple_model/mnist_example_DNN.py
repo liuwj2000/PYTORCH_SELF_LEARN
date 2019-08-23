@@ -160,6 +160,8 @@ for e in range(20):
         num_correct=(prediction==label).sum().item()#所有对的数量
         acc=num_correct/input.shape[0]
         train_accuracy+=acc
+        
+        #解释一下这里误差和正确率加和的意思，每一个迭代epoch中，有很多个mini-batch，但一次迭代一个batch只使用一次，那么我加和就是这一轮epoch的结果
 
     losses.append(train_loss/len(train_data))
     accuracy.append(train_accuracy/len(train_data))
